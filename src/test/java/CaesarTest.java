@@ -16,5 +16,15 @@ public class CaesarTest{
         Caesar caesar = new Caesar("test string");
         assertEquals("test string", caesar.getInputString());
     }
-    
+    @Test
+    public void runEncrypt_receiveInput_String(){
+        Caesar caesar= new Caesar("test");
+        //noinspection ConstantConditions
+        assertTrue(caesar.encryptText("right", 1) instanceof String);
+    }
+    @Test
+    public void runEncyrpt_shiftLettersBy1_String() {
+        Caesar caesar = new Caesar("a");
+        assertEquals("b", caesar.encryptText("right",1));
+    }
 }
