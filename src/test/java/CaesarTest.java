@@ -27,4 +27,20 @@ public class CaesarTest{
         Caesar caesar = new Caesar("a");
         assertEquals("b", caesar.encryptText("right",1));
     }
+    @Test
+    public void runEncrypt_shiftLettersBy2_String() {
+        Caesar caesar = new Caesar("a");
+        assertEquals("c", caesar.encryptText("right",2));
+    }
+
+    @Test
+    public void runEncrypt_shiftLettersBeyondZ_String() {
+        Caesar caesar = new Caesar("z");
+        assertEquals("a", caesar.encryptText("right",1));
+    }
+    @Test
+    public void runEncrypt_dealingWithEncryptWhitespaces_String() {
+        Caesar caesar = new Caesar("a b");
+        assertEquals("c d", caesar.encryptText("right",2));
+    }
 }
