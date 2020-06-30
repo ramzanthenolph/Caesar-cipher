@@ -80,5 +80,9 @@ public class CaesarTest{
         Caesar caesar = new Caesar("a b c");
         assertEquals("z a b", caesar.decryptText("left",1));
     }
-    
+    @Test
+    public void runDecrypt_decryptToTheRight_String() {
+        Caesar caesar = new Caesar("z");
+        assertEquals("a", caesar.decryptText("right",1));
+    }
 }
