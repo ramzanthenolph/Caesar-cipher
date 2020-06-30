@@ -11,4 +11,10 @@ public class CaesarTest{
         //noinspection ConstantConditions
         assertTrue(caesar instanceof Caesar);
     }
+    @Test
+    public void runGetInput_returnString_String(){
+        Caesar caesar = new Caesar("test string");
+        assertEquals("test string", caesar.getInputString());
+    }
+    
 }
