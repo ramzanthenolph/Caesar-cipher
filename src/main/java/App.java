@@ -34,7 +34,28 @@ public class App {
                 System.out.println("Your Input: "+userInput);
                 System.out.println("Encrypted Input: "+caesar.encryptText(direction, shiftEntry));
             }else if(menuSelect == 2){
+                //decrypt
+                System.out.println("Enter text to be decrypted");
+                String userInput = input.nextLine();
+                System.out.println("In which direction do you want to decrypt your text? Right or Left. ");
+                String direction = "";
 
+                boolean validDirection = true;
+                while(validDirection){
+                    direction = input.nextLine();
+                    if(!direction.equalsIgnoreCase("right") && !direction.equalsIgnoreCase("left")){
+                        System.out.println("Please select a direction by typing left or right");
+                    }
+                    else {
+                        validDirection = false;
+                    }
+                }
+
+                System.out.println("How many characters do you want to shift to  "+direction);
+                int shiftEntry = input.nextInt();
+                Caesar caesar = new Caesar(userInput);
+                System.out.println("Your Input: "+userInput);
+                System.out.println("Decrypted Input: "+caesar.decryptText(direction, shiftEntry));
             }
             else if(menuSelect == 3){
                 menu = false;
@@ -43,5 +64,6 @@ public class App {
                 System.out.print("Invalid input. Please select correct number.");
             }
         }
+        input.close();
     }
 }
