@@ -85,4 +85,9 @@ public class CaesarTest{
         Caesar caesar = new Caesar("z");
         assertEquals("a", caesar.decryptText("right",1));
     }
+    @Test
+    public void runDecrypt_dealingWithNonAlphabets_String() {
+        Caesar caesar = new Caesar("1-2.3");
+        assertEquals("1-2.3", caesar.decryptText("right",3));
+    }
 }
