@@ -75,4 +75,10 @@ public class CaesarTest{
         Caesar caesar = new Caesar("bmt fr n");
         assertEquals("who am i", caesar.decryptText("left",5));
     }
+    @Test
+    public void runDecrypt_decryptWithWhitespace_String() {
+        Caesar caesar = new Caesar("a b c");
+        assertEquals("z a b", caesar.decryptText("left",1));
+    }
+    
 }
