@@ -58,4 +58,6 @@ public class CaesarTest{
         Caesar caesar = new Caesar("a");
         assertEquals("z", caesar.encryptText("left",1));
     }
+
+
 }

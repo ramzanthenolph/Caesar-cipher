@@ -75,4 +75,53 @@ public class Caesar {
 
         return encryptedString;
     }
+
+    public String decryptText(String shiftDirection, int shiftBy){
+        String[] brokenString = inputString.split("");
+
+        for (String letter : brokenString) {
+            if(letter.contains(" ")){
+                //noinspection StringConcatenationInLoop
+                decryptedString += " ";
+            }
+            else if(letter.matches("[^a-zA-Z]")){
+                //noinspection StringConcatenationInLoop
+                decryptedString += letter;
+            }
+            else {
+                if (shiftDirection.equalsIgnoreCase("right")){
+                    //Decrypt to the right
+                    for (int y = 0; y < alphabets.length; y++) {
+                        if (letter.equalsIgnoreCase(alphabets[y])) {
+                            if((y+shiftBy) >= alphabets.length){
+                                //noinspection StringConcatenationInLoop
+                                decryptedString += alphabets[y-26 + shiftBy];
+                            }
+                            else {
+                                //noinspection StringConcatenationInLoop
+                                decryptedString += alphabets[y + shiftBy];
+                            }
+                        }
+                    }
+                }
+                else {
+                    //Decrypt Left by default
+                    for (int y = alphabets.length-1; y >= 0; y--) {
+                        if (letter.equalsIgnoreCase(alphabets[y])) {
+                            if((y-shiftBy) < 0){
+                                //noinspection StringConcatenationInLoop
+                                decryptedString += alphabets[y+26-shiftBy];
+                            }
+                            else {
+                                //noinspection StringConcatenationInLoop
+                                decryptedString += alphabets[y - shiftBy];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return decryptedString;
+    }
 }
