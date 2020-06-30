@@ -70,4 +70,9 @@ public class CaesarTest{
         Caesar caesar = new Caesar("ab");
         assertEquals("cd", caesar.decryptText("right",2));
     }
+    @Test
+    public void runDecrypt_decryptShiftBeyondA_String() {
+        Caesar caesar = new Caesar("bmt fr n");
+        assertEquals("who am i", caesar.decryptText("left",5));
+    }
 }
