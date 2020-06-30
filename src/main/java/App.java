@@ -27,6 +27,14 @@ public class App {
                         validDirection = false;
                     }
                 }
+
+                System.out.println("How many characters do you want to shift to  "+direction);
+                int shiftEntry = input.nextInt();
+                Caesar caesar = new Caesar(userInput);
+                System.out.println("Your Input: "+userInput);
+                System.out.println("Encrypted Input: "+caesar.encryptText(direction, shiftEntry));
+            }else if(){
+                
             }
         }
     }
