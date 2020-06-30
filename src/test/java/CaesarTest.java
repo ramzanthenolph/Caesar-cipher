@@ -65,4 +65,9 @@ public class CaesarTest{
         //noinspection ConstantConditions
         assertTrue(caesar.decryptText("right", 1) instanceof String);
     }
+    @Test
+    public void runDecrypt_decryptShiftBy2_String() {
+        Caesar caesar = new Caesar("ab");
+        assertEquals("cd", caesar.decryptText("right",2));
+    }
 }
