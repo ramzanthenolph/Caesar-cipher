@@ -48,4 +48,9 @@ public class CaesarTest{
         Caesar caesar = new Caesar("1-2.3");
         assertEquals("1-2.3", caesar.encryptText("right",3));
     }
+    @Test
+    public void runEncrypt_shiftLettersToLeftBy1_String() {
+        Caesar caesar = new Caesar("b");
+        assertEquals("a", caesar.encryptText("left",1));
+    }
 }
