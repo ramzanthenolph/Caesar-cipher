@@ -33,8 +33,14 @@ public class App {
                 Caesar caesar = new Caesar(userInput);
                 System.out.println("Your Input: "+userInput);
                 System.out.println("Encrypted Input: "+caesar.encryptText(direction, shiftEntry));
-            }else if(){
-                
+            }else if(menuSelect == 2){
+
+            }
+            else if(menuSelect == 3){
+                menu = false;
+            }
+            else{
+                System.out.print("Invalid input. Please select correct number.");
             }
         }
     }
