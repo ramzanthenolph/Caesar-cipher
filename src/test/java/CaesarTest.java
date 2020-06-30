@@ -59,5 +59,10 @@ public class CaesarTest{
         assertEquals("z", caesar.encryptText("left",1));
     }
 
-
+    @Test
+    public void runDecrypt_receiveInput_String(){
+        Caesar caesar = new Caesar("test");
+        //noinspection ConstantConditions
+        assertTrue(caesar.decryptText("right", 1) instanceof String);
+    }
 }
